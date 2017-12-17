@@ -13,22 +13,22 @@ public class TypeWriterEffect : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-        textComponent = GetComponent<Text>();
-        text = textComponent.text;
-        textComponent.text = "";
+	    textComponent = GetComponent<Text>();
+	    text = textComponent.text;
+	    textComponent.text = "";
 	}
 	// Update is called once per frame
 	void Update () 
 	{
-		if(isActive)
-		{
-		    InvokeRepeating("writer", 0, internalTime);
-		    isActive = false;
-		}
-		if(currentPosition>text.Length-1)
-		{
-		    CancelInvoke();
-		}	
+	    if(isActive)
+	    {
+  	        InvokeRepeating("writer", 0, internalTime);
+	        isActive = false;
+	    }
+	    if(currentPosition>text.Length-1)
+	    {
+	        CancelInvoke();
+	    }	
 	}
 	
    	 void writer()
